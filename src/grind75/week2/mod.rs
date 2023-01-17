@@ -11,3 +11,4 @@ pub mod three_sum;
 pub mod matrix_01;
 pub mod longest_substr;
 pub mod level_order_traversal;
+pub mod coin_change;
