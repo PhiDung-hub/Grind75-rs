@@ -12,3 +12,7 @@ pub mod matrix_01;
 pub mod longest_substr;
 pub mod level_order_traversal;
 pub mod coin_change;
+pub mod reverse_polish_notation;
+pub mod course_schedule;
+pub mod min_stack;
+pub mod merge_intervals;
