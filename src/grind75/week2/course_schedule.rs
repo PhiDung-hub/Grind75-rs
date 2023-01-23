@@ -3,13 +3,13 @@
 pub fn can_finish(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> bool {
     // equivalent to cycle detection in graph
     let n = num_courses as usize;
-    let mut prereq_of: Vec<Vec<i32>> = vec![vec![]; n];
+    let mut prereq_of_courses: Vec<Vec<i32>> = vec![vec![]; n];
     let mut prereq_counts = vec![0; n];
     let mut finishable_courses = Vec::<usize>::new();
 
     // Step 1 - Build graph
     for prereq in prerequisites {
-        prereq_of[prereq[1] as usize].push(prereq[0]);
+        prereq_of_courses[prereq[1] as usize].push(prereq[0]);
         prereq_counts[prereq[0] as usize] += 1;
     }
     let mut count_finishable_courses = 0;
@@ -24,7 +24,7 @@ pub fn can_finish(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> bool {
 
     // Step 3 - Count available
     while let Some(course) = finishable_courses.pop() {
-        while let Some(course) = prereq_of[course].pop() {
+        while let Some(course) = prereq_of_courses[course].pop() {
             let course = course as usize;
             prereq_counts[course] -= 1;
             if prereq_counts[course] == 0 {

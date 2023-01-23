@@ -1,6 +1,10 @@
 // Problem: https://leetcode.com/problems/evaluate-reverse-polish-notation/
 
 pub fn eval_rpn(tokens: Vec<String>) -> i32 {
+    if tokens.len() == 1 {
+        return tokens[0].parse::<i32>().unwrap();
+    }
+
     let mut operand_stack: Vec<String> = Vec::new();
 
     fn is_operand(input: String) -> bool {

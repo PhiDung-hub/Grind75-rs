@@ -43,11 +43,15 @@ mod tests {
     use super::*;
 
     #[test]
-    fn example_1() {}
+    fn example_1() {
+        let mut min_stack = MinStack::new();
 
-    #[test]
-    fn example_2() {}
-
-    #[test]
-    fn example_3() {}
+        min_stack.push(-2);
+        min_stack.push(0);
+        min_stack.push(-1);
+        assert_eq!(min_stack.get_min(), -2);
+        min_stack.pop();
+        assert_eq!(min_stack.top(), 0);
+        assert_eq!(min_stack.get_min(), -2);
+    }
 }
