@@ -15,7 +15,6 @@ pub mod coin_change;
 pub mod reverse_polish_notation;
 pub mod course_schedule;
 pub mod min_stack;
-pub mod merge_intervals;
 pub mod product_of_array_except_self;
 pub mod implement_trie;
 pub mod validate_bst;
