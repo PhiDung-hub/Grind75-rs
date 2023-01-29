@@ -1,12 +1,10 @@
-#[allow(dead_code)]
-enum DispenserItem {
-    Empty,
-    Ammo(u8),
-    Things(String, i32),
-    Place { x: i32, y: i32 },
+macro_rules! say {
+    ($a: expr) => {
+        println!("Hello world!");
+        println!("{}", $a);
+    };
 }
 
 fn main() {
-    let x: bool = None as Option<i32> == None;
-    println!("{}", x);
+    say!("this");
 }

@@ -7,16 +7,18 @@ pub fn merge(mut intervals: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
     let (mut temp_start, mut temp_end) = (intervals[0][0], intervals[0][1]);
 
     for interval in intervals {
-        if interval[0] > temp_end {
+        let (start, end) = (interval[0], interval[1]); 
+        if start > temp_end {
             // next inerval is not merged, push in result and start a new one.
             result.push(vec![temp_start, temp_end]);
-            temp_start = interval[0];
-            temp_end = interval[1];
-        } else if interval[1] > temp_end {
+            temp_start = start;
+            temp_end = end;
+        } else if end > temp_end {
             // merge end of next interval
-            temp_end = interval[1];
+            temp_end = end;
         }
     }
+
     result.push(vec![temp_start, temp_end]);
 
     result
