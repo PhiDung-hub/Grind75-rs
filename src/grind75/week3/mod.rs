@@ -4,3 +4,4 @@ pub mod lca_of_binary_tree;
 pub mod sort_colors;
 pub mod key_value_store;
 pub mod accounts_merge;
+pub mod word_break;
