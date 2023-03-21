@@ -1,20 +1,21 @@
 // Problem: https://leetcode.com/problems/time-based-key-value-store/
 
 use std::collections::HashMap;
-struct TimeMap {
-    map: HashMap<String, Vec<(String, i32)>>,
+
+pub struct TimeMap {
+    pub map: HashMap<String, Vec<(String, i32)>>,
 }
 
 impl TimeMap {
-    fn new() -> Self {
+    pub fn new() -> Self {
         TimeMap { map: HashMap::new() }
     }
 
-    fn set(&mut self, key: String, value: String, timestamp: i32) {
+    pub fn set(&mut self, key: String, value: String, timestamp: i32) {
         self.map.entry(key).or_default().push((value, timestamp));
     }
 
-    fn get(&self, key: String, timestamp: i32) -> String {
+    pub fn get(&self, key: String, timestamp: i32) -> String {
         let some_values = self.map.get(&key);
         if some_values.is_none() {
             return "".to_string();
@@ -55,5 +56,4 @@ mod tests {
         assert_eq!(map.get("foo".to_string(), 4), "bar2");
         assert_eq!(map.get("foo".to_string(), 2), "bar");
     }
-
 }
