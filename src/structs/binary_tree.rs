@@ -42,6 +42,24 @@ impl TreeNode {
         }
     }
 
+    pub fn find(root: &NodeRef, target: i32) -> NodeRef {
+        let mut stack = vec![root.clone()];
+
+        while let Some(node_ref) = stack.pop() {
+            if let Some(node_rc) = node_ref {
+                let node = &*node_rc.borrow();
+                let TreeNode { val, left, right } = node;
+                if *val == target {
+                    return Some(node_rc.clone());
+                }
+                stack.push(right.clone());
+                stack.push(left.clone());
+            }
+        }
+
+        None
+    }
+
     pub fn dfs(root: NodeRef) -> Vec<i32> {
         let mut result: Vec<i32> = Vec::new();
         let mut stack = vec![root];
@@ -81,7 +99,7 @@ impl TreeNode {
             panic!("Invalid array")
         }
 
-        let root_ref: NodeRef = Some(Rc::new(RefCell::new(Self::new(v[0].unwrap()))));
+        let root_ref: NodeRef = Some(Rc::new(RefCell::new(Self::new(v[0]?))));
         let mut prev_level_nodes: VecDeque<NodeRef> = VecDeque::new();
         prev_level_nodes.push_front(root_ref.clone());
 
@@ -96,7 +114,7 @@ impl TreeNode {
                     break 'outer_while_loop;
                 }
 
-                let node_rc = prev_level_nodes.pop_back().unwrap().unwrap();
+                let node_rc = prev_level_nodes.pop_back()??;
                 let node = &mut *node_rc.borrow_mut();
 
                 // left arm
@@ -142,7 +160,7 @@ impl TreeNode {
         if root.is_none() {
             return vec![];
         }
-        let mut result = vec![Some(root.clone().unwrap().borrow().val)];
+        let mut result = vec![root.as_ref().map(|node| node.borrow().val)];
         let mut queue: VecDeque<NodeRef> = VecDeque::new();
         queue.push_back(root);
         while let Some(node_ref) = queue.pop_front() {

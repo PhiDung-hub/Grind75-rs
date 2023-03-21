@@ -49,10 +49,7 @@ mod tests {
         let nodes = vec![1, 2, 3, 4, 5, 6, 7];
         let edges = vec![(1, 2), (1, 3), (2, 4), (2, 5), (3, 6), (3, 7), (5, 8)];
 
-        Graph::new(
-            nodes.into_iter().map(|v| v.into()).collect(),
-            edges.into_iter().map(|e| e.into()).collect(),
-        )
+        Graph::new(nodes.into_iter().map(|v| v.into()).collect(), edges.into_iter().map(|e| e.into()).collect())
     }
 
     #[test]
@@ -72,10 +69,7 @@ mod tests {
 
         let expected_path = vec![1, 2, 4, 5, 8];
 
-        assert_eq!(
-            depth_first_search(&graph, root.into(), target.into()),
-            Some(expected_path)
-        );
+        assert_eq!(depth_first_search(&graph, root.into(), target.into()), Some(expected_path));
     }
 
     /* Example graph #2:
@@ -105,10 +99,7 @@ mod tests {
             (7, 6),
         ];
 
-        Graph::new(
-            nodes.into_iter().map(|v| v.into()).collect(),
-            undirected_edges.into_iter().map(|e| e.into()).collect(),
-        )
+        Graph::new(nodes.into_iter().map(|v| v.into()).collect(), undirected_edges.into_iter().map(|e| e.into()).collect())
     }
 
     #[test]
@@ -128,9 +119,6 @@ mod tests {
 
         let expected_path = vec![4, 3, 6, 2, 1];
 
-        assert_eq!(
-            depth_first_search(&graph, root.into(), target.into()),
-            Some(expected_path)
-        );
+        assert_eq!(depth_first_search(&graph, root.into(), target.into()), Some(expected_path));
     }
 }
