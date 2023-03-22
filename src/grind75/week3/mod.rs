@@ -5,3 +5,7 @@ pub mod sort_colors;
 pub mod key_value_store;
 pub mod accounts_merge;
 pub mod word_break;
+pub mod partition_2_subsets;
+pub mod partition_k_subsets;
+pub mod powerset;
+pub mod atoi;
