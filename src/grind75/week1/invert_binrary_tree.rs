@@ -1,5 +1,5 @@
 // Problem: https://leetcode.com/problems/invert-binary-tree
-use crate::structs::binary_tree::{NodeRef, TreeNode};
+use crate::structs::binary_tree::*;
 use std::collections::VecDeque;
 
 trait TreeNodeSwap {
@@ -52,33 +52,33 @@ mod tests {
 
     #[test]
     fn typical_case() {
-        let tree = TreeNode::from_bfs(vec![Some(4), Some(2), Some(7), Some(1), Some(3), Some(6), Some(9)]);
-        assert_eq!(TreeNode::bfs(invert_tree(tree.clone())), vec![4, 7, 2, 9, 6, 3, 1]);
-        let tree = TreeNode::from_bfs(vec![Some(4), Some(2), Some(7), Some(1), Some(3), Some(6), Some(9)]);
-        assert_eq!(TreeNode::bfs(invert_tree_iterative(tree.clone())), vec![4, 7, 2, 9, 6, 3, 1]);
+        let tree = from_bfs(vec![Some(4), Some(2), Some(7), Some(1), Some(3), Some(6), Some(9)]);
+        assert_eq!(bfs(invert_tree(tree.clone())), vec![4, 7, 2, 9, 6, 3, 1]);
+        let tree = from_bfs(vec![Some(4), Some(2), Some(7), Some(1), Some(3), Some(6), Some(9)]);
+        assert_eq!(bfs(invert_tree_iterative(tree.clone())), vec![4, 7, 2, 9, 6, 3, 1]);
     }
 
     #[test]
     fn simple_case() {
-        let tree = TreeNode::from_bfs(vec![Some(1), Some(2), Some(3)]);
-        assert_eq!(TreeNode::bfs(invert_tree(tree.clone())), vec![1, 3, 2]);
-        let tree = TreeNode::from_bfs(vec![Some(1), Some(2), Some(3)]);
-        assert_eq!(TreeNode::bfs(invert_tree_iterative(tree.clone())), vec![1, 3, 2]);
+        let tree = from_bfs(vec![Some(1), Some(2), Some(3)]);
+        assert_eq!(bfs(invert_tree(tree.clone())), vec![1, 3, 2]);
+        let tree = from_bfs(vec![Some(1), Some(2), Some(3)]);
+        assert_eq!(bfs(invert_tree_iterative(tree.clone())), vec![1, 3, 2]);
     }
 
     #[test]
     fn partially_null_case() {
-        let tree = TreeNode::from_bfs(vec![Some(2), Some(3), None, Some(1)]);
-        assert_eq!(TreeNode::to_bfs_option(invert_tree(tree.clone())), vec![Some(2), None, Some(3), None, Some(1)]);
-        let tree = TreeNode::from_bfs(vec![Some(2), Some(3), None, Some(1)]);
-        assert_eq!(TreeNode::to_bfs_option(invert_tree_iterative(tree.clone())), vec![Some(2), None, Some(3), None, Some(1)]);
+        let tree = from_bfs(vec![Some(2), Some(3), None, Some(1)]);
+        assert_eq!(to_bfs_option(invert_tree(tree.clone())), vec![Some(2), None, Some(3), None, Some(1)]);
+        let tree = from_bfs(vec![Some(2), Some(3), None, Some(1)]);
+        assert_eq!(to_bfs_option(invert_tree_iterative(tree.clone())), vec![Some(2), None, Some(3), None, Some(1)]);
     }
 
     #[test]
     fn empty_tree() {
-        let tree = TreeNode::from_bfs(vec![]);
-        assert_eq!(TreeNode::bfs(invert_tree(tree.clone())), vec![]);
-        let tree = TreeNode::from_bfs(vec![]);
-        assert_eq!(TreeNode::bfs(invert_tree_iterative(tree.clone())), vec![]);
+        let tree = from_bfs(vec![]);
+        assert_eq!(bfs(invert_tree(tree.clone())), vec![]);
+        let tree = from_bfs(vec![]);
+        assert_eq!(bfs(invert_tree_iterative(tree.clone())), vec![]);
     }
 }

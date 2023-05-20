@@ -45,19 +45,19 @@ mod tests {
 
     #[test]
     fn example_1() {
-        let target_tree = TreeNode::from_bfs(vec![Some(3), Some(9), Some(20), None, None, Some(15), Some(7)]);
+        let target_tree = from_bfs(vec![Some(3), Some(9), Some(20), None, None, Some(15), Some(7)]);
         assert_eq!(level_order(target_tree), vec![vec![3], vec![9, 20], vec![15, 7]]);
     }
 
     #[test]
     fn example_2() {
-        let target_tree = TreeNode::from_bfs(vec![Some(1)]);
+        let target_tree = from_bfs(vec![Some(1)]);
         assert_eq!(level_order(target_tree), vec![vec![1]]);
     }
 
     #[test]
     fn example_3() {
-        let target_tree = TreeNode::from_bfs(vec![]);
+        let target_tree = from_bfs(vec![]);
         assert_eq!(level_order(target_tree), vec![] as Vec<Vec<i32>>);
     }
 }

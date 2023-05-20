@@ -167,8 +167,8 @@ mod tests {
 
     #[test]
     fn equal_case_1() {
-        let tree1 = TreeNode::from_bfs(vec![Some(1), None, Some(2), Some(3), None, Some(1)]);
-        let tree2 = TreeNode::from_bfs(vec![Some(2), Some(3), None, Some(1)]);
+        let tree1 = from_bfs(vec![Some(1), None, Some(2), Some(3), None, Some(1)]);
+        let tree2 = from_bfs(vec![Some(2), Some(3), None, Some(1)]);
         assert_eq!(is_subtree(tree1.clone(), tree2.clone()), true);
         assert_eq!(is_subtree_improved(tree1.clone(), tree2.clone()), true);
         assert_eq!(is_subtree_iterative_optimized(tree1.clone(), tree2.clone()), true);
@@ -177,8 +177,8 @@ mod tests {
 
     #[test]
     fn equal_case_2() {
-        let tree1 = TreeNode::from_bfs(vec![Some(1)]);
-        let tree2 = TreeNode::from_bfs(vec![]);
+        let tree1 = from_bfs(vec![Some(1)]);
+        let tree2 = from_bfs(vec![]);
         assert_eq!(is_subtree(tree1.clone(), tree2.clone()), true);
         assert_eq!(is_subtree_improved(tree1.clone(), tree2.clone()), true);
         assert_eq!(is_subtree_iterative_optimized(tree1.clone(), tree2.clone()), true);
@@ -187,8 +187,8 @@ mod tests {
 
     #[test]
     fn equal_case_3() {
-        let tree1 = TreeNode::from_bfs(vec![Some(3), Some(4), Some(5), Some(1), Some(2)]);
-        let tree2 = TreeNode::from_bfs(vec![Some(4), Some(1), Some(2)]);
+        let tree1 = from_bfs(vec![Some(3), Some(4), Some(5), Some(1), Some(2)]);
+        let tree2 = from_bfs(vec![Some(4), Some(1), Some(2)]);
         assert_eq!(is_subtree(tree1.clone(), tree2.clone()), true);
         assert_eq!(is_subtree_improved(tree1.clone(), tree2.clone()), true);
         assert_eq!(is_subtree_iterative_optimized(tree1.clone(), tree2.clone()), true);
@@ -197,8 +197,8 @@ mod tests {
 
     #[test]
     fn different_nodes() {
-        let tree1 = TreeNode::from_bfs(vec![Some(2), Some(3), Some(2), Some(1)]);
-        let tree2 = TreeNode::from_bfs(vec![Some(2), Some(3), None, Some(1)]);
+        let tree1 = from_bfs(vec![Some(2), Some(3), Some(2), Some(1)]);
+        let tree2 = from_bfs(vec![Some(2), Some(3), None, Some(1)]);
         assert_eq!(is_subtree(tree1.clone(), tree2.clone()), false);
         assert_eq!(is_subtree_improved(tree1.clone(), tree2.clone()), false);
         assert_eq!(is_subtree_iterative_optimized(tree1.clone(), tree2.clone()), false);
@@ -206,8 +206,8 @@ mod tests {
 
     #[test]
     fn different_values_1() {
-        let tree1 = TreeNode::from_bfs(vec![Some(2), Some(3), Some(2), Some(1)]);
-        let tree2 = TreeNode::from_bfs(vec![Some(2), Some(3), Some(4), Some(1)]);
+        let tree1 = from_bfs(vec![Some(2), Some(3), Some(2), Some(1)]);
+        let tree2 = from_bfs(vec![Some(2), Some(3), Some(4), Some(1)]);
         assert_eq!(is_subtree(tree1.clone(), tree2.clone()), false);
         assert_eq!(is_subtree_improved(tree1.clone(), tree2.clone()), false);
         assert_eq!(is_subtree_iterative_optimized(tree1.clone(), tree2.clone()), false);

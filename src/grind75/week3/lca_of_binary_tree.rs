@@ -68,7 +68,7 @@ mod tests {
 
     #[test]
     fn example_1() {
-        let tree = TreeNode::from_bfs(vec![
+        let tree = from_bfs(vec![
             Some(3),
             Some(5),
             Some(1),
@@ -81,16 +81,16 @@ mod tests {
             Some(7),
             Some(4),
         ]);
-        let p = TreeNode::find(&tree, 5);
-        let q = TreeNode::find(&tree, 1);
-        let expected_result = TreeNode::find(&tree, 3);
+        let p = find(&tree, 5);
+        let q = find(&tree, 1);
+        let expected_result = find(&tree, 3);
         assert_eq!(lowest_common_ancestor_recursive(tree.clone(), p.clone(), q.clone()), expected_result.clone());
         assert_eq!(lowest_common_ancestor(tree, p, q), expected_result);
     }
 
     #[test]
     fn example_2() {
-        let tree = TreeNode::from_bfs(vec![
+        let tree = from_bfs(vec![
             Some(3),
             Some(5),
             Some(1),
@@ -103,29 +103,29 @@ mod tests {
             Some(7),
             Some(4),
         ]);
-        let p = TreeNode::find(&tree, 5);
-        let q = TreeNode::find(&tree, 4);
-        let expected_result = TreeNode::find(&tree, 5);
+        let p = find(&tree, 5);
+        let q = find(&tree, 4);
+        let expected_result = find(&tree, 5);
         assert_eq!(lowest_common_ancestor_recursive(tree.clone(), p.clone(), q.clone()), expected_result.clone());
         assert_eq!(lowest_common_ancestor(tree, p, q), expected_result);
     }
 
     #[test]
     fn example_3() {
-        let tree = TreeNode::from_bfs(vec![Some(1), Some(2)]);
-        let p = TreeNode::find(&tree, 1);
-        let q = TreeNode::find(&tree, 2);
-        let expected_result = TreeNode::find(&tree, 1);
+        let tree = from_bfs(vec![Some(1), Some(2)]);
+        let p = find(&tree, 1);
+        let q = find(&tree, 2);
+        let expected_result = find(&tree, 1);
         assert_eq!(lowest_common_ancestor_recursive(tree.clone(), p.clone(), q.clone()), expected_result.clone());
         assert_eq!(lowest_common_ancestor(tree, p, q), expected_result);
     }
 
     #[test]
     fn assymetric_case() {
-        let tree = TreeNode::from_bfs(vec![Some(-1), Some(0), Some(3), Some(-2), Some(4), None, None, Some(8)]);
-        let p = TreeNode::find(&tree, 8);
-        let q = TreeNode::find(&tree, 0);
-        let expected_result = TreeNode::find(&tree, 0);
+        let tree = from_bfs(vec![Some(-1), Some(0), Some(3), Some(-2), Some(4), None, None, Some(8)]);
+        let p = find(&tree, 8);
+        let q = find(&tree, 0);
+        let expected_result = find(&tree, 0);
         assert_eq!(lowest_common_ancestor_recursive(tree.clone(), p.clone(), q.clone()), expected_result.clone());
         assert_eq!(lowest_common_ancestor(tree, p, q), expected_result);
     }
