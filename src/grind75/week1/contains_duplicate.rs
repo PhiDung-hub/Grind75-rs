@@ -20,21 +20,21 @@ mod tests {
     #[test]
     fn false_cases() {
         let vec1 = vec![1, 2, 3, 4, 5];
-        assert_eq!(contains_duplicate(vec1.clone()), false);
-        assert_eq!(contains_duplicate_sort(vec1), false);
+        assert!(!contains_duplicate(vec1.clone()));
+        assert!(!contains_duplicate_sort(vec1));
         let vec2 = vec![1, 2, 3, 4, 5, 6,7,8,9,10];
-        assert_eq!(contains_duplicate(vec2.clone()), false);
-        assert_eq!(contains_duplicate_sort(vec2), false);
+        assert!(!contains_duplicate(vec2.clone()));
+        assert!(!contains_duplicate_sort(vec2));
     }
 
     #[test]
     fn true_cases() {
         let vec1 = vec![3, 2, 2, 3, 3, 3, 3, 3];
-        assert_eq!(contains_duplicate(vec1.clone()), true);
-        assert_eq!(contains_duplicate_sort(vec1), true);
+        assert!(contains_duplicate(vec1.clone()));
+        assert!(contains_duplicate_sort(vec1));
 
         let vec2 = vec![1, 2, 2, 4, 5];
-        assert_eq!(contains_duplicate(vec2.clone()), true);
-        assert_eq!(contains_duplicate_sort(vec2), true);
+        assert!(contains_duplicate(vec2.clone()));
+        assert!(contains_duplicate_sort(vec2));
     }
 }

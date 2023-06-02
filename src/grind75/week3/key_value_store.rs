@@ -43,10 +43,10 @@ mod tests {
     #[test]
     fn example_1() {
         let mut map = TimeMap::new();
-        assert_eq!(map.set("foo".to_string(), "bar".to_string(), 1), ());
+        map.set("foo".to_string(), "bar".to_string(), 1);
         assert_eq!(map.get("foo".to_string(), 1), "bar");
         assert_eq!(map.get("foo".to_string(), 3), "bar");
-        assert_eq!(map.set("foo".to_string(), "bar2".to_string(), 4), ());
+        map.set("foo".to_string(), "bar2".to_string(), 4);
         assert_eq!(map.get("foo".to_string(), 4), "bar2");
         assert_eq!(map.get("foo".to_string(), 5), "bar2");
     }
@@ -54,10 +54,10 @@ mod tests {
     #[test]
     fn test_different_get_time() {
         let mut map = TimeMap::new();
-        assert_eq!(map.set("foo".to_string(), "bar".to_string(), 1), ());
+        map.set("foo".to_string(), "bar".to_string(), 1);
         assert_eq!(map.get("foo".to_string(), 1), "bar");
         assert_eq!(map.get("foo".to_string(), 0), "");
-        assert_eq!(map.set("foo".to_string(), "bar2".to_string(), 4), ());
+        map.set("foo".to_string(), "bar2".to_string(), 4);
         assert_eq!(map.get("foo".to_string(), 4), "bar2");
         assert_eq!(map.get("foo".to_string(), 2), "bar");
     }

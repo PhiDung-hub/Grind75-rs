@@ -35,16 +35,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(can_construct("aa".to_string(), "ab".to_string()), false);
+        assert!(!can_construct("aa".to_string(), "ab".to_string()));
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(can_construct("aa".to_string(), "aba".to_string()), true);
+        assert!(can_construct("aa".to_string(), "aba".to_string()));
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(can_construct("aabcdefz".to_string(), "abcdefgz".to_string()), false);
+        assert!(!can_construct("aabcdefz".to_string(), "abcdefgz".to_string()));
     }
 }

@@ -84,7 +84,7 @@ mod tests {
         let p = find(&tree, 5);
         let q = find(&tree, 1);
         let expected_result = find(&tree, 3);
-        assert_eq!(lowest_common_ancestor_recursive(tree.clone(), p.clone(), q.clone()), expected_result.clone());
+        assert_eq!(lowest_common_ancestor_recursive(tree.clone(), p.clone(), q.clone()), expected_result);
         assert_eq!(lowest_common_ancestor(tree, p, q), expected_result);
     }
 
@@ -106,7 +106,7 @@ mod tests {
         let p = find(&tree, 5);
         let q = find(&tree, 4);
         let expected_result = find(&tree, 5);
-        assert_eq!(lowest_common_ancestor_recursive(tree.clone(), p.clone(), q.clone()), expected_result.clone());
+        assert_eq!(lowest_common_ancestor_recursive(tree.clone(), p.clone(), q.clone()), expected_result);
         assert_eq!(lowest_common_ancestor(tree, p, q), expected_result);
     }
 
@@ -116,7 +116,7 @@ mod tests {
         let p = find(&tree, 1);
         let q = find(&tree, 2);
         let expected_result = find(&tree, 1);
-        assert_eq!(lowest_common_ancestor_recursive(tree.clone(), p.clone(), q.clone()), expected_result.clone());
+        assert_eq!(lowest_common_ancestor_recursive(tree.clone(), p.clone(), q.clone()), expected_result);
         assert_eq!(lowest_common_ancestor(tree, p, q), expected_result);
     }
 
@@ -126,7 +126,7 @@ mod tests {
         let p = find(&tree, 8);
         let q = find(&tree, 0);
         let expected_result = find(&tree, 0);
-        assert_eq!(lowest_common_ancestor_recursive(tree.clone(), p.clone(), q.clone()), expected_result.clone());
+        assert_eq!(lowest_common_ancestor_recursive(tree.clone(), p.clone(), q.clone()), expected_result);
         assert_eq!(lowest_common_ancestor(tree, p, q), expected_result);
     }
 }

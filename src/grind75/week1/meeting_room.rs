@@ -26,17 +26,17 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(can_attend_all_meetings(vec![[1, 3], [5, 7]]), true);
+        assert!(can_attend_all_meetings(vec![[1, 3], [5, 7]]));
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(can_attend_all_meetings(vec![[1, 3], [5, 7], [3, 4], [4, 16], [7, 10], [12, 20]]), false);
+        assert!(!can_attend_all_meetings(vec![[1, 3], [5, 7], [3, 4], [4, 16], [7, 10], [12, 20]]));
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(can_attend_all_meetings(vec![[1, 3]]), true);
-        assert_eq!(can_attend_all_meetings(vec![]), true);
+        assert!(can_attend_all_meetings(vec![[1, 3]]));
+        assert!(can_attend_all_meetings(vec![]));
     }
 }

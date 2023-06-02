@@ -69,21 +69,21 @@ mod tests {
     #[test]
     fn example_1() {
         let nums = vec![1, 5, 11, 5];
-        assert_eq!(can_partition_backtrack(nums.clone()), true);
-        assert_eq!(can_partition(nums.clone()), true);
+        assert!(can_partition_backtrack(nums.clone()));
+        assert!(can_partition(nums));
     }
 
     #[test]
     fn example_2() {
         let nums = vec![1, 2, 3, 5];
-        assert_eq!(can_partition_backtrack(nums.clone()), false);
-        assert_eq!(can_partition(nums.clone()), false);
+        assert!(!can_partition_backtrack(nums.clone()));
+        assert!(!can_partition(nums));
     }
 
     #[test]
     fn example_3() {
         let nums = vec![2, 2, 3, 5];
-        assert_eq!(can_partition_backtrack(nums.clone()), false);
-        assert_eq!(can_partition(nums.clone()), false);
+        assert!(!can_partition_backtrack(nums.clone()));
+        assert!(!can_partition(nums));
     }
 }

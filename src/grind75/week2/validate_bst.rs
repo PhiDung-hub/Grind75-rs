@@ -34,13 +34,13 @@ mod tests {
     #[test]
     fn example_1() {
         let tree = from_bfs(vec![Some(2), Some(1), Some(3)]);
-        assert_eq!(is_valid_bst(tree), true);
+        assert!(is_valid_bst(tree));
     }
 
     #[test]
     fn example_2() {
         let tree = from_bfs(vec![Some(5), Some(1), Some(4), None, None, Some(3), Some(6)]);
-        assert_eq!(is_valid_bst(tree), false);
+        assert!(!is_valid_bst(tree));
     }
 
     #[test]

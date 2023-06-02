@@ -44,19 +44,19 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(backspace_compare("aa#bc".to_string(), "awe##bc".to_string()), true);
-        assert_eq!(backspace_compare_optimized("aa#bc".to_string(), "awe##bc".to_string()), true);
+        assert!(backspace_compare("aa#bc".to_string(), "awe##bc".to_string()));
+        assert!(backspace_compare_optimized("aa#bc".to_string(), "awe##bc".to_string()));
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(backspace_compare("aaaaa#bc".to_string(), "awaae##bc".to_string()), false);
-        assert_eq!(backspace_compare_optimized("aaaaa#bc".to_string(), "awaae##bc".to_string()), false);
+        assert!(!backspace_compare("aaaaa#bc".to_string(), "awaae##bc".to_string()));
+        assert!(!backspace_compare_optimized("aaaaa#bc".to_string(), "awaae##bc".to_string()));
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(backspace_compare("###a#bc".to_string(), "awewer######bc".to_string()), true);
-        assert_eq!(backspace_compare_optimized("###a#bc".to_string(), "awewer######bc".to_string()), true);
+        assert!(backspace_compare("###a#bc".to_string(), "awewer######bc".to_string()));
+        assert!(backspace_compare_optimized("###a#bc".to_string(), "awewer######bc".to_string()));
     }
 }

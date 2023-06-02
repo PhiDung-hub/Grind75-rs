@@ -51,18 +51,18 @@ mod tests {
     #[test]
     fn example_1() {
         let nums = vec![4, 3, 2, 3, 5, 2, 1];
-        assert_eq!(can_partition(nums, 4), true);
+        assert!(can_partition(nums, 4));
     }
 
     #[test]
     fn example_2() {
         let nums = vec![1, 2, 3, 4];
-        assert_eq!(can_partition(nums, 3), false);
+        assert!(!can_partition(nums, 3));
     }
 
     #[test]
     fn example_3() {
         let nums = vec![553, 450, 2412, 1735, 521, 170, 943, 87, 3200, 473, 75, 3819, 492, 324, 689, 629];
-        assert_eq!(can_partition(nums, 4), true);
+        assert!(can_partition(nums, 4));
     }
 }

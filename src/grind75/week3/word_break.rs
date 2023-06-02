@@ -44,20 +44,20 @@ mod tests {
     fn test_word_break() {
         let words = ["leet", "code"].map(String::from).to_vec();
         let s = "leetcode".to_string();
-        assert_eq!(word_break(s, words), true);
+        assert!(word_break(s, words));
     }
 
     #[test]
     fn test_word_break_02() {
         let words = ["apple", "pen"].map(String::from).to_vec();
         let s = "applepenapple".to_string();
-        assert_eq!(word_break(s, words), true);
+        assert!(word_break(s, words));
     }
 
     #[test]
     fn test_word_break_03() {
         let words = ["cats", "dog", "sand", "and", "cat"].map(String::from).to_vec();
         let s = "catsandog".to_string();
-        assert_eq!(word_break(s, words), false);
+        assert!(!word_break(s, words));
     }
 }

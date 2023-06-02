@@ -31,17 +31,17 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(is_palindrome(121), true);
-        assert_eq!(is_palindrome(-121), true);
+        assert!(is_palindrome(121));
+        assert!(is_palindrome(-121));
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(is_palindrome(789), false);
+        assert!(is_palindrome(789));
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(is_palindrome(0), true);
+        assert!(is_palindrome(0));
     }
 }

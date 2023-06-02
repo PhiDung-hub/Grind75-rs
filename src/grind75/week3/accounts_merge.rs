@@ -40,7 +40,7 @@ mod tests {
     #[allow(unused_imports)]
     use super::*;
 
-    fn sort_answer(_vec_vec: &mut Vec<Vec<String>>) {
+    fn sort_answer(_vec_vec: &mut [Vec<String>]) {
         // each vector of _vec_vec should always contains more than 1 element
         _vec_vec.sort_by_key(|v| match v.first() {
             Some(value) => value.clone(),

@@ -196,7 +196,7 @@ mod tests {
     fn from_bfs_typical_case() {
         let root_ref = from_bfs(vec![Some(1), Some(2), Some(3), Some(4), None, None, Some(5), Some(6), Some(7)]);
         assert_eq!(bfs(root_ref.clone()), vec![1, 2, 3, 4, 5, 6, 7]);
-        assert_eq!(dfs(root_ref.clone()), vec![1, 2, 4, 6, 7, 3, 5]);
+        assert_eq!(dfs(root_ref), vec![1, 2, 4, 6, 7, 3, 5]);
     }
 
     #[test]
@@ -220,6 +220,6 @@ mod tests {
     #[test]
     fn test_to_bfs_option() {
         let root = from_bfs(vec![Some(1), None, Some(2), Some(3)]);
-        assert_eq!(to_bfs_option(root.clone()), vec![Some(1), None, Some(2), Some(3)])
+        assert_eq!(to_bfs_option(root), vec![Some(1), None, Some(2), Some(3)])
     }
 }
