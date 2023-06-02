@@ -84,7 +84,6 @@ mod tests {
 
     #[test]
     fn example_2() {
-
         let mut trie = Trie::new();
         trie.insert("apple".to_string());
         trie.insert("application".to_string());

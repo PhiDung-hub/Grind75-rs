@@ -26,11 +26,16 @@ mod tests {
     use super::*;
 
     #[test]
-    fn example_1() {}
+    fn example_1() {
+        let intervals = [[1, 3], [6, 9]].map(|v| v.to_vec()).to_vec();
+        let new_interval = [2, 5].to_vec();
+        assert_eq!(insert(intervals, new_interval), [[1, 5], [6, 9]]);
+    }
 
     #[test]
-    fn example_2() {}
-
-    #[test]
-    fn example_3() {}
+    fn example_2() {
+        let intervals = [[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]].map(|v| v.to_vec()).to_vec();
+        let new_interval = [4, 8].to_vec();
+        assert_eq!(insert(intervals, new_interval), [[1, 2], [3, 10], [12, 16]]);
+    }
 }
