@@ -1,6 +1,5 @@
 // #![feature(drain_filter)]
-pub mod graph;
+pub mod algo;
 pub mod grind75;
-pub mod sort;
 pub mod structs;
-pub mod extra;
+pub mod macros;

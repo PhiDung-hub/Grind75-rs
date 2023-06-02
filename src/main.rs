@@ -1,16 +1,8 @@
-#[allow(unused_imports)]
-use std::collections::*;
-use std::io;
-// use std::io::prelude::*;
-// use std::fs::File;
+use algo_practise::find_max;
 
-pub fn main() -> io::Result<()> {
-    let mut s = "xzssxz".to_string();
-    s +=  " helloo";
-    println!("{}", -25/10);
-
-
-    Ok(())
+pub fn main() {
+    let x = find_max!(1, 5, 2);
+    assert_eq!(x, 5);
 }
 
 #[cfg(test)]
