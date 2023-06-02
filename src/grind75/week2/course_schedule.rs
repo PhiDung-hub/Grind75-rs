@@ -45,24 +45,24 @@ mod tests {
     #[test]
     fn example_1() {
         let prerequisites = [[0, 1]].map(|array| array.to_vec()).to_vec();
-        assert_eq!(can_finish(2, prerequisites), true);
+        assert!(can_finish(2, prerequisites));
     }
 
     #[test]
     fn example_2() {
         let prerequisites = [[0, 1], [1, 0]].map(|array| array.to_vec()).to_vec();
-        assert_eq!(can_finish(2, prerequisites), false);
+        assert!(!can_finish(2, prerequisites));
     }
 
     #[test]
     fn example_3() {
         let prerequisites = [[0, 1], [1, 2], [2, 1], [2, 0]].map(|array| array.to_vec()).to_vec();
-        assert_eq!(can_finish(3, prerequisites), false);
+        assert!(!can_finish(3, prerequisites));
     }
 
     #[test]
     fn example_4() {
         let prerequisites = [[0, 1], [2, 1], [2, 0]].map(|array| array.to_vec()).to_vec();
-        assert_eq!(can_finish(3, prerequisites), true);
+        assert!(can_finish(3, prerequisites));
     }
 }

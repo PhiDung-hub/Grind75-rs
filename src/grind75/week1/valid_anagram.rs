@@ -43,23 +43,23 @@ mod tests {
     fn example_1() {
         let left_string = String::from("anagram");
         let right_string = String::from("nagaram");
-        assert_eq!(is_anagram(left_string.clone(), right_string.clone()), true);
-        assert_eq!(is_anagram_functional(left_string.clone(), right_string.clone()), true);
+        assert!(is_anagram(left_string.clone(), right_string.clone()));
+        assert!(is_anagram_functional(left_string, right_string));
     }
 
     #[test]
     fn example_2() {
         let left_string = String::from("rat");
         let right_string = String::from("car");
-        assert_eq!(is_anagram(left_string.clone(), right_string.clone()), false);
-        assert_eq!(is_anagram_functional(left_string.clone(), right_string.clone()), false);
+        assert!(!is_anagram(left_string.clone(), right_string.clone()));
+        assert!(!is_anagram_functional(left_string, right_string));
     }
 
     #[test]
     fn example_3() {
         let left_string = String::from("ana");
         let right_string = String::from("nan");
-        assert_eq!(is_anagram(left_string.clone(), right_string.clone()), false);
-        assert_eq!(is_anagram_functional(left_string.clone(), right_string.clone()), false);
+        assert!(!is_anagram(left_string.clone(), right_string.clone()));
+        assert!(!is_anagram_functional(left_string, right_string));
     }
 }

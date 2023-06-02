@@ -31,21 +31,21 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(valid_parentheses(String::from("(())]")), false);
+        assert!(!valid_parentheses(String::from("(())]")));
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(valid_parentheses(String::from("(")), false);
+        assert!(!valid_parentheses(String::from("(")));
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(valid_parentheses(String::from("(({]}))")), false);
+        assert!(!valid_parentheses(String::from("(({]}))")));
     }
 
     #[test]
     fn example_4() {
-        assert_eq!(valid_parentheses(String::from("(({}))")), true);
+        assert!(valid_parentheses(String::from("(({}))")));
     }
 }

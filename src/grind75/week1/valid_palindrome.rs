@@ -25,21 +25,21 @@ mod tests {
     #[test]
     fn example_1() {
         let test_string = String::from("A man, a plan, a canal: Panama");
-        assert_eq!(is_palindrome(test_string.clone()), true);
-        assert_eq!(is_palindrome_functional(test_string.clone()), true);
+        assert!(is_palindrome(test_string.clone()));
+        assert!(is_palindrome_functional(test_string));
     }
 
     #[test]
     fn example_2() {
         let test_string = String::from("race a car");
-        assert_eq!(is_palindrome(test_string.clone()), false);
-        assert_eq!(is_palindrome_functional(test_string.clone()), false);
+        assert!(!is_palindrome(test_string.clone()));
+        assert!(!is_palindrome_functional(test_string));
     }
 
     #[test]
     fn example_3() {
         let test_string = String::from(" ");
-        assert_eq!(is_palindrome(test_string.clone()), true);
-        assert_eq!(is_palindrome_functional(test_string.clone()), true);
+        assert!(is_palindrome(test_string.clone()));
+        assert!(is_palindrome_functional(test_string));
     }
 }

@@ -75,11 +75,11 @@ mod tests {
     fn example_1() {
         let mut trie = Trie::new();
         trie.insert("apple".to_string());
-        assert_eq!(trie.search("apple".to_string()), true);
-        assert_eq!(trie.search("app".to_string()), false);
-        assert_eq!(trie.starts_with("app".to_string()), true);
+        assert!(trie.search("apple".to_string()));
+        assert!(!trie.search("app".to_string()));
+        assert!(trie.starts_with("app".to_string()));
         trie.insert("app".to_string());
-        assert_eq!(trie.search("app".to_string()), true);
+        assert!(trie.search("app".to_string()));
     }
 
     #[test]
@@ -89,12 +89,12 @@ mod tests {
         trie.insert("apple".to_string());
         trie.insert("application".to_string());
         trie.insert("hello".to_string());
-        assert_eq!(trie.search("apple".to_string()), true);
-        assert_eq!(trie.search("hello".to_string()), true);
-        assert_eq!(trie.starts_with("appl".to_string()), true);
-        assert_eq!(trie.starts_with("appli".to_string()), true);
-        assert_eq!(trie.starts_with("hel".to_string()), true);
-        assert_eq!(trie.search("appli".to_string()), false);
-        assert_eq!(trie.search("hel".to_string()), false);
+        assert!(trie.search("apple".to_string()));
+        assert!(trie.search("hello".to_string()));
+        assert!(trie.starts_with("appl".to_string()));
+        assert!(trie.starts_with("appli".to_string()));
+        assert!(trie.starts_with("hel".to_string()));
+        assert!(!trie.search("appli".to_string()));
+        assert!(!trie.search("hel".to_string()));
     }
 }
