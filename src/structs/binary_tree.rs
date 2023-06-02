@@ -18,14 +18,14 @@ impl Hash for TreeNode {
                 let node = &*node_rc.borrow();
                 node.hash(state)
             }
-            None => ((false, 0)).hash(state),
+            None => (false, 0).hash(state),
         }
         match &self.right {
             Some(node_rc) => {
                 let node = &*node_rc.borrow();
                 node.hash(state)
             }
-            None => ((false, 1)).hash(state),
+            None => (false, 1).hash(state),
         }
     }
 }
@@ -110,7 +110,7 @@ pub fn from_bfs(v: Vec<Option<i32>>) -> NodeRef {
         let mut node_in_this_level = 0;
 
         for _ in 0..node_in_prev_level {
-            if !(i < v.len()) {
+            if i >= v.len() {
                 break 'outer_while_loop;
             }
 
@@ -128,7 +128,7 @@ pub fn from_bfs(v: Vec<Option<i32>>) -> NodeRef {
             }
 
             // input vector is exhausted
-            if !(i < v.len() - 1) {
+            if i >= v.len() - 1 {
                 break 'outer_while_loop;
             }
 

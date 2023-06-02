@@ -1,7 +1,7 @@
 // Problem: https://leetcode.com/problems/number-of-islands/
 
 pub fn num_islands(mut grid: Vec<Vec<char>>) -> i32 {
-    if grid.len() == 0 {
+    if grid.is_empty() {
         return 0;
     }
 

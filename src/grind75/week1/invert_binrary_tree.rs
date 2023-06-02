@@ -24,9 +24,8 @@ pub fn invert_tree(root: NodeRef) -> NodeRef {
 }
 
 pub fn invert_tree_iterative(root: NodeRef) -> NodeRef {
-    if root.is_none() {
-        return None;
-    }
+    root.as_ref()?;
+
     let mut stack: VecDeque<NodeRef> = VecDeque::new();
     stack.push_back(root.clone());
     while !stack.is_empty() {

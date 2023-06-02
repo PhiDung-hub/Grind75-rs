@@ -4,7 +4,7 @@ use std::collections::*;
 
 pub fn lowest_common_ancestor(root: NodeRef, p: NodeRef, q: NodeRef) -> NodeRef {
     let mut parent_map = HashMap::<i32, NodeRef>::new();
-    let mut explore_stack = vec![root.clone()];
+    let mut explore_stack = vec![root];
     while let Some(node) = explore_stack.pop() {
         let TreeNode { left, right, .. } = &*node.as_ref()?.borrow();
         if left.is_some() {

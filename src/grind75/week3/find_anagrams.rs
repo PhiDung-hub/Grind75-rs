@@ -17,8 +17,8 @@ pub fn find_anagrams(s: String, p: String) -> Vec<i32> {
     let s_bytes = s.as_bytes();
 
     // First pass.
-    for i in 0..p.len() {
-        pattern.entry(s_bytes[i]).and_modify(|v| {
+    for byte in s_bytes.iter().take(p.len()) {
+        pattern.entry(*byte).and_modify(|v| {
             *v -= 1;
             if *v >= 0 {
                 char_matched += 1;

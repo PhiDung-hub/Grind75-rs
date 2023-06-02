@@ -7,14 +7,14 @@ pub fn combination_sum(mut candidates: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
 
     let mut exploration_queue = vec![(vec![], 0, 0)];
     while let Some((cur_vec, cur_sum, idx)) = exploration_queue.pop() {
-        for i in idx..n {
-            let next_sum = cur_sum + candidates[i];
+        for (i, candidate) in candidates.iter().enumerate().take(n).skip(idx) {
+            let next_sum = cur_sum + candidate;
             if next_sum > target {
                 break;
             }
 
             let mut next_vec = cur_vec.clone();
-            next_vec.push(candidates[i]);
+            next_vec.push(*candidate);
 
             if next_sum == target {
                 result.push(next_vec.clone());

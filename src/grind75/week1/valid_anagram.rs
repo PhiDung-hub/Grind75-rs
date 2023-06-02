@@ -15,7 +15,7 @@ pub fn is_anagram(s: String, t: String) -> bool {
         map.entry(s).and_modify(|e| *e += 1).or_insert(1);
         map.entry(t).and_modify(|e| *e -= 1).or_insert(-1);
     }
-    map.values().find(|e| **e != 0).is_none()
+    !map.values().any(|e| *e != 0)
 }
 
 pub fn is_anagram_functional(s: String, t: String) -> bool {
@@ -32,7 +32,7 @@ pub fn is_anagram_functional(s: String, t: String) -> bool {
         map.entry(s).and_modify(|e| *e += 1).or_insert(1);
         map.entry(t).and_modify(|e| *e -= 1).or_insert(-1);
     });
-    map.values().find(|e| **e != 0).is_none()
+    !map.values().any(|e| *e != 0)
 }
 
 #[cfg(test)]

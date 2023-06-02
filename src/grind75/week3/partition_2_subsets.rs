@@ -20,7 +20,7 @@ pub fn can_partition(nums: Vec<i32>) -> bool {
         }
     }
 
-    dp[set_sum as usize]
+    dp[set_sum]
 }
 
 pub fn can_partition_backtrack(mut nums: Vec<i32>) -> bool {

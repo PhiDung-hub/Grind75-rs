@@ -29,6 +29,11 @@ impl TimeMap {
         }
     }
 }
+impl Default for TimeMap {
+    fn default() -> Self {
+        Self::new()
+    }
+}
 
 #[cfg(test)]
 mod tests {

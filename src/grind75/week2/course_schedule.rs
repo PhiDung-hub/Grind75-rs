@@ -15,8 +15,8 @@ pub fn can_finish(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> bool {
     let mut count_finishable_courses = 0;
 
     // Step 2 - Get available course
-    for i in 0..n {
-        if prereq_counts[i] == 0 {
+    for (i, prereq_count) in prereq_counts.iter().enumerate().take(n) {
+        if *prereq_count == 0 {
             finishable_courses.push(i);
             count_finishable_courses += 1;
         }

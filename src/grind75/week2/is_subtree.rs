@@ -32,20 +32,20 @@ pub fn is_subtree(root: NodeRef, sub_root: NodeRef) -> bool {
                 return true;
             }
 
-            is_subtree(root_node.left.clone(), sub_root.clone()) || is_subtree(root_node.right.clone(), sub_root.clone())
+            is_subtree(root_node.left.clone(), sub_root.clone()) || is_subtree(root_node.right.clone(), sub_root)
         }
     }
 }
 
-pub fn is_subtree_builtin(root: NodeRef, sub_root: NodeRef)  -> bool{
+pub fn is_subtree_builtin(root: NodeRef, sub_root: NodeRef) -> bool {
     if sub_root.is_none() || root == sub_root {
         return true;
     }
     if let Some(node) = root {
         let node = node.borrow();
-        is_subtree(node.left.clone(), sub_root.clone()) || is_subtree(node.right.clone(), sub_root.clone())
+        is_subtree(node.left.clone(), sub_root.clone()) || is_subtree(node.right.clone(), sub_root)
     } else {
-        return false;
+        false
     }
 }
 

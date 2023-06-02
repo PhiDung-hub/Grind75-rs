@@ -12,7 +12,7 @@ pub struct Node<T> {
 }
 
 impl<T: Copy + PartialOrd> List<T> {
-    pub fn into_iter(self) -> IntoIter<T> {
+    pub fn to_iter(self) -> IntoIter<T> {
         IntoIter(self)
     }
 
@@ -71,6 +71,11 @@ impl<T: Copy + PartialOrd> List<T> {
 
     pub fn peek_mut(&mut self) -> Option<&mut T> {
         self.head.as_mut().map(|node| &mut node.val)
+    }
+}
+impl<T: Copy + PartialOrd> Default for List<T> {
+    fn default() -> Self {
+        Self::new()
     }
 }
 
@@ -182,7 +187,7 @@ mod test {
         list.push(2);
         list.push(3);
 
-        let mut iter = list.into_iter();
+        let mut iter = list.to_iter();
         assert_eq!(iter.next(), Some(3));
         assert_eq!(iter.next(), Some(2));
         assert_eq!(iter.next(), Some(1));

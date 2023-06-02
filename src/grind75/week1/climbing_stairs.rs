@@ -13,8 +13,7 @@ pub fn climbing_stairs(n: i32) -> i32 {
         prev2_climb = prev_climb;
         prev_climb = result;
     }
-    return result;
-
+    result
 }
 
 #[cfg(test)]
@@ -26,7 +25,6 @@ mod tests {
     fn base_cases() {
         assert_eq!(climbing_stairs(1), 1);
         assert_eq!(climbing_stairs(2), 2);
-        
     }
 
     #[test]
@@ -36,6 +34,5 @@ mod tests {
     }
 
     #[test]
-    fn example_3() {
-    }
+    fn example_3() {}
 }

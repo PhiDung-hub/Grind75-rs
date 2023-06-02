@@ -1,13 +1,7 @@
 // Problem: https://leetcode.com/problems/valid-palindrome
-// use lazy_static::lazy_static;
-// use regex::Regex;
 
 pub fn is_palindrome(s: String) -> bool {
-    // Regex is OVERKILL.
-    // lazy_static! {
-    //     static ref RE_ALPHANUMERIC: Regex = Regex::new("[a-zA-Z0-9]").unwrap();
-    // }
-    let mut string = s.clone();
+    let mut string = s;
     string.retain(|c| !c.is_whitespace() & c.is_alphanumeric());
     string = string.to_ascii_lowercase();
 

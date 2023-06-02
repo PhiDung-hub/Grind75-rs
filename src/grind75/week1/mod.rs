@@ -10,7 +10,6 @@ pub mod binary_search;
 pub mod flood_fill;
 pub mod lca_of_bst;
 pub mod balanced_binary_tree;
-pub mod ll_cycle;
 pub mod queue_using_stack;
 pub mod first_bad_version;
 pub mod ransom_note;

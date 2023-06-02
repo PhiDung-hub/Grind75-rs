@@ -1,4 +1,6 @@
 // Problem: https://leetcode.com/problems/binary-search
+use std::cmp::Ordering;
+
 pub fn search(nums: Vec<i32>, target: i32) -> i32 {
     let n = nums.len();
     let (mut low, mut high) = (0, n - 1);
@@ -6,17 +8,21 @@ pub fn search(nums: Vec<i32>, target: i32) -> i32 {
 
     while low <= high {
         look_idx = (low + high) / 2;
-        if target > nums[look_idx] {
-            low = look_idx + 1;
-        } else if target < nums[look_idx] {
-            if look_idx < 1 { // overflow on usize might occur after
-                return -1;
+        match target.cmp(&nums[look_idx]) {
+            Ordering::Less => {
+                if look_idx < 1 {
+                    // overflow on usize might occur after
+                    return -1;
+                }
+                high = look_idx - 1;
             }
-            high = look_idx - 1;
-        } else {
-            return look_idx as i32;
+            Ordering::Equal => {
+                return look_idx as i32;
+            }
+            Ordering::Greater => {
+                low = look_idx + 1;
+            }
         }
-
     }
     -1
 }

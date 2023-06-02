@@ -63,7 +63,7 @@ pub fn longest_palindrome_manacher(s: String) -> String {
     // rebuild the string
     let mut answer = String::new();
     for i in (i_max - p_max as usize)..=(i_max + p_max as usize) {
-        if bogus_s.as_bytes()[i] != '#' as u8 {
+        if bogus_s.as_bytes()[i] != b'#' {
             answer.push(bogus_s.as_bytes()[i] as char);
         }
     }

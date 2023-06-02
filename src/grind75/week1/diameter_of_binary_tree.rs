@@ -11,14 +11,12 @@ pub fn diameter_of_binary_tree(root: NodeRef) -> i32 {
             Some(root_rc) => {
                 let node = &*root_rc.borrow();
                 let TreeNode { left, right, .. } = node;
-                let left_d = get_diameter(&left, d);
-                let right_d = get_diameter(&right, d);
+                let left_d = get_diameter(left, d);
+                let right_d = get_diameter(right, d);
                 *d = (left_d + right_d).max(*d);
                 1 + left_d.max(right_d)
             }
-            None => {
-                return 0;
-            }
+            None => 0,
         }
     }
 

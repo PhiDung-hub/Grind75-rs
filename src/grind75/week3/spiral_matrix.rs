@@ -27,8 +27,8 @@ pub fn spiral_order(matrix: Vec<Vec<i32>>) -> Vec<i32> {
                 cur_direction = Direction::Down;
             }
             Direction::Down => {
-                for i in low..=high {
-                    result[step_number] = matrix[i][right];
+                for row in matrix.iter().take(high + 1).skip(low) {
+                    result[step_number] = row[right];
                     step_number += 1;
                 }
                 right -= 1;

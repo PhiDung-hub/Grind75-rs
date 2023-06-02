@@ -6,11 +6,11 @@ pub fn max_profit(prices: Vec<i32>) -> i32 {
 
     let mut profit: i32 = 0;
     let mut min_price_so_far: i32 = prices[0];
-    for day in 1..prices.len() {
-        if prices[day] < min_price_so_far {
-            min_price_so_far = prices[day];
+    for price in prices.iter().skip(1) {
+        if *price < min_price_so_far {
+            min_price_so_far = *price;
         }
-        profit = std::cmp::max(profit, prices[day] - min_price_so_far);
+        profit = std::cmp::max(profit, price - min_price_so_far);
     }
     profit
 }

@@ -16,10 +16,10 @@ pub fn permute(nums: Vec<i32>) -> Vec<Vec<i32>> {
     let n = nums.len();
 
     while let Some((cur_vec, included_set)) = explore_stack.pop() {
-        for i in 0..n {
+        for (i, num) in nums.iter().enumerate().take(n) {
             if !included_set.contains(&i) {
                 let mut new_vec = cur_vec.clone();
-                new_vec.push(nums[i]);
+                new_vec.push(*num);
                 let mut new_set = included_set.clone();
                 new_set.insert(i);
                 if new_set.len() == n {

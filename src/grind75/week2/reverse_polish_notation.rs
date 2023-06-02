@@ -8,10 +8,7 @@ pub fn eval_rpn(tokens: Vec<String>) -> i32 {
     let mut operand_stack: Vec<String> = Vec::new();
 
     fn is_operand(input: String) -> bool {
-        match input.as_str() {
-            "-" | "+" | "*" | "/" => true,
-            _ => false,
-        }
+        matches!(input.as_str(), "-" | "+" | "*" | "/")
     }
 
     fn cal(op1: String, op2: String, operator: String) -> i32 {
@@ -61,7 +58,9 @@ mod tests {
 
     #[test]
     fn example_3() {
-        let tokens = ["10","6","9","3","+","-11","*","/","*","17","+","5","+"].map(String::from).to_vec();
+        let tokens = ["10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"]
+            .map(String::from)
+            .to_vec();
         assert_eq!(eval_rpn(tokens), 22);
     }
 }

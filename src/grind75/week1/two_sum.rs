@@ -4,11 +4,11 @@ use std::collections::HashMap;
 pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
     let mut memo: HashMap<i32, i32> = HashMap::new();
 
-    for i in 0..nums.len() {
-        if memo.contains_key(&nums[i]) {
-            return vec![*memo.get(&nums[i]).unwrap(), i as i32];
+    for (i, num) in nums.iter().enumerate() {
+        if memo.contains_key(num) {
+            return vec![*memo.get(num).unwrap(), i as i32];
         } else {
-            memo.insert(target - nums[i], i as i32);
+            memo.insert(target - num, i as i32);
         }
     }
 

@@ -8,12 +8,12 @@ pub fn can_attend_all_meetings(mut scheduled_meetings: Vec<[i32; 2]>) -> bool {
     scheduled_meetings.sort_by(|meeting_1, meeting_2| meeting_1[0].cmp(&meeting_2[0]));
 
     let mut end = scheduled_meetings[0][1];
-    for i in 1..scheduled_meetings.len() {
-        if scheduled_meetings[i][0] < end {
+    for meeting in scheduled_meetings.iter().skip(1) {
+        if meeting[0] < end {
             return false;
         }
 
-        end = end.max(scheduled_meetings[i][1]);
+        end = end.max(meeting[1]);
     }
 
     true

@@ -32,7 +32,7 @@ pub fn add_binary(a: String, b: String) -> String {
     }
 
     let mut remaining_vec: Vec<char> = Vec::new();
-    while let Some((char_a, _)) = zipped_iter.next() {
+    for (char_a, _) in zipped_iter {
         cur_sum = (*char_a - b'0') + carry;
         carry = cur_sum / 2;
         remaining_vec.push((cur_sum % 2 + b'0') as char);

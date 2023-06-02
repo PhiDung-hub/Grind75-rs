@@ -38,7 +38,7 @@ pub fn three_sum(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
         i += 1;
     }
 
-    return result;
+    result
 }
 
 #[cfg(test)]
@@ -53,7 +53,6 @@ mod tests {
 
     #[test]
     fn example_2() {
-
         assert_eq!(three_sum(vec![-1, 0, 1, 2, -1, -4]), vec![[-1, -1, 2], [-1, 0, 1]]);
     }
 
